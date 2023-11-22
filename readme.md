@@ -1,7 +1,7 @@
 <!-- ABOUT THE PROJECT -->
 <div align="center">
   <a href="https://github.com/it0na72/CFF-Values-Quiz/">
-    <img src="/classic-fine-foods-logo-1595507375.webp" alt="Logo" width="100" height="100">
+    <img src="/classic-fine-foods-logo-1595507375.webp" alt="Logo" width="150" height="100">
   </a>
 <h3 align="center">CFF Values Quiz</h3>
 
