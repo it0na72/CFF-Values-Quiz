@@ -1,10 +1,22 @@
 <!-- ABOUT THE PROJECT -->
+<div align="center">
+  <a href="https://github.com/it0na72/CFF-Values-Quiz/">
+    <img src="/classic-fine-foods-logo-1595507375.webp" alt="Logo" width="100" height="100">
+  </a>
+<h3 align="center">CFF Values Quiz</h3>
+
+<p align="center">
+    <a href="https://it0na72.github.io/FastFunds/"><b>View Demo</b></a>
+    ·
+    <a href="https://github.com/it0na72/CFF-Values-Quiz/issue">Report Bug</a>
+    ·
+    <a href="https://github.com/it0na72/CFF-Values-Quiz/issue">Request Feature</a>
+  </p>
+</div>
 
 ## About The Project
 
-This is a simple quiz made for Classic Fine Foods to show the six values of the company.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+This is a simple quiz made for Classic Fine Foods to show the six values of the company. Customer Centricity, Responsibility, Passion, Entrepreneurship, one CFF & Excellence.
 
 <!-- GETTING STARTED -->
 
