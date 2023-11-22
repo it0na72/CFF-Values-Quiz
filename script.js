@@ -103,7 +103,11 @@ function selectAnswer(e) {
 
 function showScore() {
   resetState();
+  questionElement.innerHTML = `You scored ${score} out of ${questions.length}! Here's your prize!`;
+  nextButton.innerHTML = "Video will display here";
+  nextButton.style.display = "block";
 }
+
 function handleNextButton() {
   currentQuestionIndex++;
   if (currentQuestionIndex < questions.length) {
