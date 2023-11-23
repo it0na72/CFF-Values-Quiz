@@ -6,7 +6,7 @@
 <h3 align="center">CFF Values Quiz</h3>
 
 <p align="center">
-    <a href="https://it0na72.github.io/FastFunds/"><b>View Demo</b></a>
+    <a href="https://it0na72.github.io/CFF-Values-Quiz/"><b>View Demo</b></a>
     ·
     <a href="https://github.com/it0na72/CFF-Values-Quiz/issue">Report Bug</a>
     ·
