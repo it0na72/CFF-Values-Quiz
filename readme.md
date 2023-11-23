@@ -34,6 +34,7 @@ After cloning this repo you should be able to change as needed.
 ## Roadmap
 
 - [ ] Improve colour pallet + add logo on the background
+- [ ] Add a start button before the questions show up, with the logo 
 - [ ] Fix media queries for mobile + tablet
 - [ ] Add video at the end of the quiz
 - [ ] Add condition that should only show the prize (video) if player gets 5/5 answers
