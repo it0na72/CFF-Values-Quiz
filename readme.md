@@ -44,7 +44,7 @@ After cloning this repo you should be able to change as needed.
 - [ ] Add different questions
 - [ ] Add opening page before starting the quiz explaining what the project is about
 - [ ] After the quiz, possibly add the line "While we may come from all around the world, at Classic Fine Foods we speak one language. That language is #OneCFF", then the video plays
-- [ ] Possibly add Jean's purple picture animated at the end of quiz
+- [ ] Possibly add Jean's purple picture animated at the end of quiz. Use animation websites to animate the image.
 
 See the [open issues](https://github.com/it0na72/CFF-Values-Quiz/issue) for a full list of proposed features (and known issues).
 
