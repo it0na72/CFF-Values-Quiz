@@ -33,13 +33,13 @@ After cloning this repo you should be able to change as needed.
 
 ## Roadmap
 
-- [ ] Improve colour pallet + add logo on the background
-- [ ] Add a start button before the questions show up, with the logo 
+- [x] Improve colour pallet + add logo on the background
+- [x] Add a start button before the questions show up, with the logo
 - [ ] Fix media queries for mobile + tablet
 - [ ] Add video at the end of the quiz
-- [ ] Add condition that should only show the prize (video) if player gets 5/5 answers
+- [x] Add condition that should only show the prize (video) if player gets 5/5 answers
 - [ ] Add background music as soon as the quiz starts at 10% volume
-- [ ] Include transitions and loading effect before the next question
+- [ ] Include transitions and loading effect before the next question (maybe not needed)
 - [ ] Add loading page transition with the CFF logo spinning (TBC)
 - [ ] Add different questions
 - [ ] Add opening page before starting the quiz explaining what the project is about
