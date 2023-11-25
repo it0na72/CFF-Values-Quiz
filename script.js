@@ -46,13 +46,20 @@ const questions = [
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
+const showQuizButton = document.getElementById("showQuiz");
 
 let currentQuestionIndex = 0;
 let score = 0;
 
+// Hide the quiz initially
+questionElement.style.display = "none";
+answerButtons.style.display = "none";
+nextButton.style.display = "none";
+
 function startQuiz() {
   currentQuestionIndex = 0;
   score = 0;
+  showQuizButton.style.display = "none";
   nextButton.innerHTML = "Next Question";
   showQuestion();
 }
@@ -73,6 +80,10 @@ function showQuestion() {
     }
     button.addEventListener("click", selectAnswer);
   });
+
+  // Show the quiz elements
+  questionElement.style.display = "block";
+  answerButtons.style.display = "block";
 }
 
 function resetState() {
@@ -117,6 +128,10 @@ function handleNextButton() {
   }
 }
 
+// Show the quiz when the "Start Quiz" button is clicked
+showQuizButton.addEventListener("click", startQuiz);
+
+// Continue with the next question or restart the quiz on "Next Question" click
 nextButton.addEventListener("click", () => {
   if (currentQuestionIndex < questions.length) {
     handleNextButton();
@@ -124,4 +139,3 @@ nextButton.addEventListener("click", () => {
     startQuiz();
   }
 });
-startQuiz();
