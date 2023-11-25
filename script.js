@@ -114,8 +114,17 @@ function selectAnswer(e) {
 
 function showScore() {
   resetState();
-  questionElement.innerHTML = `You scored ${score} out of ${questions.length}! Here's your prize!`;
-  nextButton.innerHTML = "Video will display here";
+
+  if (score === questions.length) {
+    // Player got all questions right
+    questionElement.innerHTML = `Congratulations! You scored ${score} out of ${questions.length}! You completed the quiz!`;
+    nextButton.innerHTML = "Insert video here";
+  } else {
+    // Player didn't get all questions right
+    questionElement.innerHTML = `You scored ${score} out of ${questions.length} 😔 Retry to get all questions right! There might be a prize if you get all questions correct 🤔`;
+    nextButton.innerHTML = "Retry Quiz";
+  }
+
   nextButton.style.display = "block";
 }
 

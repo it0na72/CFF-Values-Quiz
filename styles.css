@@ -21,6 +21,24 @@ body {
   align-items: center;
 }
 
+#showQuiz {
+  background: rgb(87, 0, 87);
+  color: rgb(255, 255, 255);
+  font-weight: 500px;
+  width: 150px;
+  border: 0;
+  padding: 10px;
+  margin: auto;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.app img {
+  width: 30%;
+  margin: 0 auto;
+  display: block;
+}
+
 .app h1 {
   font-size: 25px;
   color: black;
@@ -72,18 +90,6 @@ body {
   border-radius: 4px;
   cursor: pointer;
   display: none;
-}
-
-.startquiz {
-  background: rgb(87, 0, 87);
-  color: rgb(255, 255, 255);
-  font-weight: 500;
-  width: 150px;
-  border: 0;
-  padding: 10px;
-  margin: 20px auto 0;
-  border-radius: 4px;
-  cursor: pointer;
 }
 
 .correct {
