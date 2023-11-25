@@ -47,6 +47,9 @@ const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
 const showQuizButton = document.getElementById("showQuiz");
+const quizDescription = document.getElementById("quiz-description");
+const audio = document.getElementById("bgm");
+audio.volume = 0.4;
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -62,6 +65,8 @@ function startQuiz() {
   showQuizButton.style.display = "none";
   nextButton.innerHTML = "Next Question";
   showQuestion();
+  // hide the paragraph when the quiz is started
+  quizDescription.style.display = "none";
 }
 
 function showQuestion() {
