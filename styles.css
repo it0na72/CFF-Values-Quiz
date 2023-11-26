@@ -31,9 +31,8 @@ footer a {
 }
 
 .app {
-  background: #fff;
-  width: 91%;
-  max-width: 600px;
+  background: #ffffff;
+  width: 50%;
   margin: 100px auto 0;
   border-radius: 10px;
   padding: 30px;
@@ -123,11 +122,7 @@ footer a {
 /*Mobile Devices */
 @media only screen and (max-width: 600px) {
   .app {
-    width: 20%;
-    height: 20%; /* Set height to 100% of viewport height */
-    margin: 0 auto; /* Center the content horizontally */
-    border-radius: 0;
-    box-sizing: border-box; /* Ensure padding is included in width calculation */
+    height: 90%; /* Set height to 100% of viewport height */
   }
 
   .app h1 {
@@ -137,7 +132,7 @@ footer a {
 
   .quiz {
     width: 100%; /* Stretch the quiz to fit the screen */
-    height: 100%; /* Set height to 100% of viewport height */
+    height: 130%; /* Set height to 100% of viewport height */
     padding: 15px; /* Add padding for better readability on small screens */
     box-sizing: border-box; /* Ensure padding is included in width calculation */
   }
