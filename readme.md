@@ -38,11 +38,11 @@ After cloning this repo you should be able to change as needed.
 - [ ] Fix media queries for mobile + tablet
 - [ ] Add video at the end of the quiz
 - [x] Add condition that should only show the prize (video) if player gets 5/5 answers
-- [ ] Add background music as soon as the quiz starts at 10% volume
+- [x] Add background music as soon as the quiz starts at 10% volume
 - [ ] Include transitions and loading effect before the next question (maybe not needed)
 - [ ] Add loading page transition with the CFF logo spinning (TBC)
 - [ ] Add different questions
-- [ ] Add opening page before starting the quiz explaining what the project is about
+- [x] Add opening page before starting the quiz explaining what the project is about
 - [ ] After the quiz, possibly add the line "While we may come from all around the world, at Classic Fine Foods we speak one language. That language is #OneCFF", then the video plays
 - [ ] Possibly add Jean's purple picture animated at the end of quiz. Use animation websites to animate the image.
 
