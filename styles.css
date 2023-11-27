@@ -99,7 +99,8 @@ footer a {
   cursor: no-drop;
 }
 
-#next-btn {
+#next-btn,
+#nextLink {
   background: rgb(87, 0, 87);
   color: white;
   font-weight: 500;
@@ -110,6 +111,25 @@ footer a {
   border-radius: 4px;
   cursor: pointer;
   display: none;
+  text-decoration: none;
+}
+
+#next-btn:hover,
+#nextLink:hover {
+  background: rgb(87, 0, 87);
+}
+
+#next-btn:disabled {
+  cursor: no-drop;
+}
+
+#next-btn,
+#nextLink {
+  text-align: center;
+}
+
+#nextLink {
+  display: block;
 }
 
 .correct {

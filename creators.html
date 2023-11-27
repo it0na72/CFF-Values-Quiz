@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lt IE 9
+      ]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script
+    ><![endif]-->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        height: 100%;
+        cursor: default;
+      }
+      body {
+        font-family: "Roboto", sans-serif; /* Default font */
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        display: table;
+        opacity: 1;
+        animation: fadein 3s forwards;
+      }
+      h2 {
+        font-weight: 300;
+        margin-bottom: 25px;
+      }
+
+      a:visited {
+        text-decoration: none;
+      }
+
+      a {
+        box-shadow: inset 0 0 0 0 rgb(87, 0, 87);
+        color: rgb(87, 0, 87);
+        margin: 0 -0.25rem;
+        padding: 0 0.25rem;
+        transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        text-decoration: none;
+      }
+
+      a:hover {
+        box-shadow: inset 100px 0 0 0 rgb(87, 0, 87);
+        color: white;
+      }
+
+      img {
+        width: 25%; /* Image width */
+        border: 0; /* For IE */
+        /* Aspect ratio of image, gives initial dimension to prevent text moving down once image is loaded */
+        /* When changing logo, change this also */
+      }
+      #main {
+        vertical-align: middle;
+        display: table-cell;
+      }
+      /* Progress bar */
+      #progress {
+        width: 45%; /* Bar width */
+        margin: 0 auto;
+        border-radius: 10px; /* Roundness */
+        background-color: #ffffff; /* Background colour */
+        padding: 7px 5px;
+        /* border: 5px solid #a8a8a8; Border */
+      }
+      #fill {
+        padding: 2px 0;
+        background-color: rgb(87, 0, 87); /* Fill colour */
+        width: 35%; /* Bar percentage, change text below also */
+        border-radius: 25px; /* Roundness */
+        animation: proanimate 2s;
+      }
+      #barpercent h3 {
+        color: white; /* Bar percentage text colour */
+        margin: 0;
+        padding: 0;
+        opacity: 1;
+        animation: fadein 3s forwards;
+      }
+
+      /* Fades in animation */
+      @keyframes fadein {
+        from {
+          opacity: 0;
+        }
+      }
+      /* Animates bar on page load */
+      @keyframes proanimate {
+        from {
+          width: 0%;
+        }
+      }
+
+      @media (max-width: 799px) {
+        img {
+          width: 60%;
+        }
+      }
+      @media screen and (max-width: 477px) {
+        img {
+          width: 60%;
+        }
+        h1 {
+          font-size: 1.3em;
+        }
+        h2 {
+          margin: 1.1em;
+          font-size: 1.1em;
+        }
+
+        h3 {
+          margin: 1em;
+        }
+      }
+    </style>
+    <title>CFF Quiz Creators</title>
+    <link rel="icon" type="images" href="logo.jpg" />
+  </head>
+  <body>
+    <div id="main">
+      <a href="https://github.com/it0na72"
+        ><img src="classic-fine-foods-logo-1595507375.png" alt="cff logo"
+      /></a>
+      <h1>Classic Fine Foods Values Quiz Developers</h1>
+      <h2>
+        If you found this, welcome! Here's all the developers of this website.
+      </h2>
+      <h3>
+        André Oliveira - Customer Service Officer <br />Elisa Corda - Customer
+        Service Manager <br />Adrienn Tőzsér - Customer Service Supervisor
+        <br />Khin Dyson - Finance Controller <br />Stuart Wimsett - HR &
+        Training Officer <br />Jean Rossignol - Senior Buyer <br />Sam Fielder -
+        IT Support Specialist
+      </h3>
+
+      <h2>
+        You can go back <a href="index.html"><b>HERE</b>.</a>
+      </h2>
+      <h5>Thanks for playing!</h5>
+    </div>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+  </body>
+</html>

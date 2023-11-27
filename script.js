@@ -182,7 +182,7 @@ function selectAnswer(e) {
     videoElement.addEventListener("ended", showNextQuestionButton);
   } else {
     selectedBtn.classList.add("incorrect");
-    selectedBtn.disabled = true; // disable only the clicked incorrect answer button
+    selectedBtn.disabled = true;
   }
 }
 
@@ -207,15 +207,65 @@ function showScore() {
 
   if (score === questions.length) {
     // player got all questions right
-    questionElement.innerHTML = `Congratulations! You scored ${score} out of ${questions.length}! You completed the quiz!`;
-    nextButton.innerHTML = "Insert video here";
-  } else {
-    // player didn't get all questions right
-    questionElement.innerHTML = `You scored ${score} out of ${questions.length} 😔 Retry to get all questions right! There might be a prize if you get all questions correct 🤔`;
-    nextButton.innerHTML = "Retry Quiz"; // this might be useless since theres no way to fail the quiz but let's just leave it for future reference i guess
-  }
+    const congratulatoryMessageElement = document.createElement("p");
+    congratulatoryMessageElement.innerText = `Congratulations! You scored ${score} out of ${questions.length} and  completed the quiz!`;
 
-  nextButton.style.display = "block";
+    // container for the congratulatory message, final video, and buttons
+    const resultContainer = document.createElement("div");
+    resultContainer.style.textAlign = "center";
+    // resultContainer.style.marginTop = "20px"; // prob not needed for now
+
+    const finalVideoElement = document.createElement("video");
+    finalVideoElement.src = "/pictures/oneforall.mp4"; //
+    finalVideoElement.controls = false;
+    finalVideoElement.autoplay = true;
+    finalVideoElement.style.margin = "auto";
+    finalVideoElement.style.display = "block";
+    finalVideoElement.width = 600;
+    finalVideoElement.height = 400;
+    finalVideoElement.volume = 0.3;
+
+    // "Play Again" button
+    const retryButton = document.createElement("button");
+    retryButton.innerHTML = "Play Again";
+    retryButton.id = "nextLink";
+    retryButton.addEventListener("click", startQuiz);
+    resultContainer.appendChild(retryButton);
+
+    // creators link
+    const linkElement = document.createElement("a");
+    linkElement.href = "creators.html";
+    linkElement.innerHTML = "Check out the creators of this website!";
+    linkElement.id = "nextLink";
+    resultContainer.appendChild(linkElement);
+
+    questionElement.innerHTML = ""; // Clear the question content
+    questionElement.appendChild(congratulatoryMessageElement);
+    questionElement.appendChild(finalVideoElement);
+
+    // show the retry button after 32 seconds. video is 31 seconds so slightly after
+    setTimeout(() => {
+      showRetryButton();
+    }, 1);
+
+    // Show the link after 32 seconds
+    setTimeout(() => {
+      showLinkToNextPage();
+    }, 1);
+  } else {
+    // Player didn't get all questions right
+    const retryMessageElement = document.createElement("p");
+    retryMessageElement.innerText = `You scored ${score} out of ${questions.length} 😔 Retry to get all questions right! There might be a prize if you get all questions correct 🤔`; // not really needed since theres no way to fail this quiz but gonna leave it for now
+
+    questionElement.appendChild(retryMessageElement);
+  }
+  function showRetryButton() {
+    const retryButton = document.createElement("next-btn");
+    retryButton.innerHTML = "Play Again";
+    retryButton.classList.add("next-btn");
+    retryButton.addEventListener("click", startQuiz);
+    questionElement.appendChild(retryButton);
+  }
 }
 
 function handleNextButton() {
@@ -238,3 +288,11 @@ nextButton.addEventListener("click", () => {
     startQuiz();
   }
 });
+
+function showLinkToNextPage() {
+  const linkElement = document.createElement("a");
+  linkElement.href = "creators.html"; // Set the path to your next HTML page
+  linkElement.innerHTML = "Check out the creators of this website!";
+  linkElement.classList.add("next-btn"); // Add a class for styling the link purple
+  questionElement.appendChild(linkElement);
+}
