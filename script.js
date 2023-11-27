@@ -1,3 +1,5 @@
+"use strict";
+
 const questions = [
   {
     question: "How do you say Excellence in French?",
@@ -79,6 +81,21 @@ audio.volume = 0.4;
 
 let currentQuestionIndex = 0;
 let score = 0;
+
+// show the quiz when the "Start Quiz" button is clicked
+showQuizButton.addEventListener("click", startQuiz);
+
+// continue with the next question or restart the quiz on "Next Question" click
+nextButton.addEventListener("click", handleNextButton);
+
+function handleNextButton() {
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
+    showQuestion();
+  } else {
+    showScore();
+  }
+}
 
 // hide the quiz on the first page
 questionElement.style.display = "none";
@@ -255,10 +272,11 @@ function showScore() {
   } else {
     // Player didn't get all questions right
     const retryMessageElement = document.createElement("p");
-    retryMessageElement.innerText = `You scored ${score} out of ${questions.length} 😔 Retry to get all questions right! There might be a prize if you get all questions correct 🤔`; // not really needed since theres no way to fail this quiz but gonna leave it for now
+    retryMessageElement.innerText = `You scored ${score} out of ${questions.length} 😔 Retry to get all questions right! There might be a prize if you get all questions correct 🤔`; // not really needed since there's no way to fail this quiz but gonna leave it for now
 
     questionElement.appendChild(retryMessageElement);
   }
+
   function showRetryButton() {
     const retryButton = document.createElement("next-btn");
     retryButton.innerHTML = "Play Again";
@@ -266,33 +284,21 @@ function showScore() {
     retryButton.addEventListener("click", startQuiz);
     questionElement.appendChild(retryButton);
   }
-}
 
-function handleNextButton() {
-  currentQuestionIndex++;
-  if (currentQuestionIndex < questions.length) {
-    showQuestion();
-  } else {
-    showScore();
+  function handleNextButton() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+      showQuestion();
+    } else {
+      showScore();
+    }
   }
-}
 
-// show the quiz when the "Start Quiz" button is clicked
-showQuizButton.addEventListener("click", startQuiz);
-
-// Continue with the next question or restart the quiz on "Next Question" click. will remove this later
-nextButton.addEventListener("click", () => {
-  if (currentQuestionIndex < questions.length) {
-    handleNextButton();
-  } else {
-    startQuiz();
+  function showLinkToNextPage() {
+    const linkElement = document.createElement("a");
+    linkElement.href = "creators.html"; // Set the path to your next HTML page
+    linkElement.innerHTML = "Check out the creators of this website!";
+    linkElement.classList.add("next-btn"); // Add a class for styling the link purple
+    questionElement.appendChild(linkElement);
   }
-});
-
-function showLinkToNextPage() {
-  const linkElement = document.createElement("a");
-  linkElement.href = "creators.html"; // Set the path to your next HTML page
-  linkElement.innerHTML = "Check out the creators of this website!";
-  linkElement.classList.add("next-btn"); // Add a class for styling the link purple
-  questionElement.appendChild(linkElement);
 }

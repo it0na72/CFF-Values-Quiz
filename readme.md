@@ -47,6 +47,7 @@ After cloning this repo you should be able to change as needed.
 - [x] Added external page with all developers
 - [ ] Change developers on the last page to show after 5 seconds
 - [ ] Fix centering on first button + last "Play Again" & "Check the devs" lines
+- [ ] Add confetti effects after quiz is completed
 
 See the [open issues](https://github.com/it0na72/CFF-Values-Quiz/issue) for a full list of proposed features (and known issues).
 
