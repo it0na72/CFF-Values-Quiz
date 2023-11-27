@@ -22,7 +22,7 @@ const questions = [
     answers: [
       { text: "လိုင်းစင်", correct: false },
       { text: "Responsabilité", correct: true },
-      { text: "whai tikanga", correct: true },
+      { text: "Whakawhanake", correct: true },
     ],
   },
   {
@@ -106,7 +106,8 @@ function resetState() {
   }
 }
 
-// ** ONCE A QUESTION IS ANSWERED WRONG, MOVE TO THE NEXT ONE**
+// ** ONCE A QUESTION IS ANSWERED WRONG, MOVE TO THE NEXT ONE WITHOUT LETTING THE PLAYER PICK ANOTHER ONE**
+
 // function selectAnswer(e) {
 //   const selectedBtn = e.target;
 //   const isCorrect = selectedBtn.dataset.correct === "true";
@@ -137,10 +138,7 @@ function selectAnswer(e) {
     nextButton.style.display = "block"; // Show next button only if the answer is correct
   } else {
     selectedBtn.classList.add("incorrect");
-    // Disable incorrect answer buttons and keep correct answer button enabled
-    Array.from(answerButtons.children).forEach((button) => {
-      button.disabled = button.dataset.correct !== "true";
-    });
+    selectedBtn.disabled = true; // Disable only the clicked incorrect answer button
   }
 }
 
