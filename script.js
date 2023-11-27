@@ -2,42 +2,42 @@ const questions = [
   {
     question: "How do you say Excellence in French?",
     answers: [
-      { text: "Excellence", correct: true },
+      { text: "Excellence", correct: false },
       { text: "Hiranga", correct: false },
-      { text: "Excelencia", correct: false },
+      { text: "Excelencia", correct: true },
     ],
   },
 
   {
     question: "How do you say Customer Centricity in Italian?",
     answers: [
-      { text: "Vásárlóközpontú", correct: true },
+      { text: "Vásárlóközpontú", correct: false },
       { text: "Centricidade no Cliente", correct: false },
-      { text: "Centricità del Cliente", correct: false },
+      { text: "Centricità del Cliente", correct: true },
     ],
   },
 
   {
     question: "How do you say Responsibility in Maori?",
     answers: [
-      { text: "Paixão", correct: true },
-      { text: "ကြောင့်", correct: false },
+      { text: "လိုင်းစင်", correct: false },
+      { text: "Responsabilité", correct: true },
+      { text: "whai tikanga", correct: true },
+    ],
+  },
+  {
+    question: "How do you say Passion in Burmese?",
+    answers: [
+      { text: "Paixão", correct: false },
+      { text: "ကြောင့်", correct: true },
       { text: "Pasión", correct: false },
     ],
   },
   {
-    question: "How do you say Entrepreneurship in Portuguese?",
+    question: "How do say Entrepreneurship in Portuguese?",
     answers: [
-      { text: "Vállalkozás", correct: true },
-      { text: "Excelente", correct: false },
-      { text: "Diamante", correct: false },
-    ],
-  },
-  {
-    question: "How do say Excellence in Portuguese?",
-    answers: [
-      { text: "Excelência", correct: true },
-      { text: "Empreendedorismo", correct: false },
+      { text: "Vállalkozás", correct: false },
+      { text: "Empreendedorismo", correct: true },
       { text: "Entrepreneuriat", correct: false },
     ],
   },
@@ -106,23 +106,42 @@ function resetState() {
   }
 }
 
+// ** ONCE A QUESTION IS ANSWERED WRONG, MOVE TO THE NEXT ONE**
+// function selectAnswer(e) {
+//   const selectedBtn = e.target;
+//   const isCorrect = selectedBtn.dataset.correct === "true";
+//   if (isCorrect) {
+//     selectedBtn.classList.add("correct");
+//     score++;
+//   } else {
+//     selectedBtn.classList.add("incorrect");
+//   }
+
+//   Array.from(answerButtons.children).forEach((button) => {
+//     if (button.dataset.correct === "true") {
+//       button.classList.add("correct");
+//     }
+//     button.disabled = true;
+//   });
+//   nextButton.style.display = "block";
+// }
+
+// ** FUNCTION THAT ALLOWS THE PLAYER TO KEEP PLAYING UNTIL THEY GET THE RIGHT ANSWER **
 function selectAnswer(e) {
   const selectedBtn = e.target;
   const isCorrect = selectedBtn.dataset.correct === "true";
+
   if (isCorrect) {
     selectedBtn.classList.add("correct");
     score++;
+    nextButton.style.display = "block"; // Show next button only if the answer is correct
   } else {
     selectedBtn.classList.add("incorrect");
+    // Disable incorrect answer buttons and keep correct answer button enabled
+    Array.from(answerButtons.children).forEach((button) => {
+      button.disabled = button.dataset.correct !== "true";
+    });
   }
-
-  Array.from(answerButtons.children).forEach((button) => {
-    if (button.dataset.correct === "true") {
-      button.classList.add("correct");
-    }
-    button.disabled = true;
-  });
-  nextButton.style.display = "block";
 }
 
 function showScore() {
