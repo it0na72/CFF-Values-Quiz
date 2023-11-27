@@ -1,26 +1,34 @@
 const questions = [
   {
-    question: "How do say Excellence in Portuguese?",
+    question: "How do you say Excellence in French?",
     answers: [
-      { text: "Excelência", correct: true },
-      { text: "Excelente", correct: false },
-      { text: "Diamante", correct: false },
+      { text: "Excellence", correct: true },
+      { text: "Hiranga", correct: false },
+      { text: "Excelencia", correct: false },
     ],
   },
 
   {
-    question: "How do say Excellence in Portuguese?",
+    question: "How do you say Customer Centricity in Italian?",
     answers: [
-      { text: "Excelência", correct: true },
-      { text: "Excelente", correct: false },
-      { text: "Diamante", correct: false },
+      { text: "Vásárlóközpontú", correct: true },
+      { text: "Centricidade no Cliente", correct: false },
+      { text: "Centricità del Cliente", correct: false },
     ],
   },
 
   {
-    question: "How do say Excellence in Portuguese?",
+    question: "How do you say Responsibility in Maori?",
     answers: [
-      { text: "Excelência", correct: true },
+      { text: "Paixão", correct: true },
+      { text: "ကြောင့်", correct: false },
+      { text: "Pasión", correct: false },
+    ],
+  },
+  {
+    question: "How do you say Entrepreneurship in Portuguese?",
+    answers: [
+      { text: "Vállalkozás", correct: true },
       { text: "Excelente", correct: false },
       { text: "Diamante", correct: false },
     ],
@@ -29,16 +37,16 @@ const questions = [
     question: "How do say Excellence in Portuguese?",
     answers: [
       { text: "Excelência", correct: true },
-      { text: "Excelente", correct: false },
-      { text: "Diamante", correct: false },
+      { text: "Empreendedorismo", correct: false },
+      { text: "Entrepreneuriat", correct: false },
     ],
   },
   {
-    question: "How do say Excellence in Portuguese?",
+    question: "How do you say One CFF in Hungarian?",
     answers: [
-      { text: "Excelência", correct: true },
-      { text: "Excelente", correct: false },
-      { text: "Diamante", correct: false },
+      { text: "Egy CFF", correct: true },
+      { text: "Un CFF", correct: false },
+      { text: "Tahi CFF", correct: false },
     ],
   },
 ];
