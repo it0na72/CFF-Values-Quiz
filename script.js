@@ -2,6 +2,8 @@ const questions = [
   {
     question: "How do you say Excellence in French?",
     video: "/pictures/excellence.mp4",
+    sentence:
+      "Nothing less than excellence is our goal in the pursuit of perfection. This value pushes us to pursue the extraordinary in all of our endeavours and to go above and beyond the ordinary.",
     answers: [
       { text: "Excellence", correct: false },
       { text: "Hiranga", correct: false },
@@ -12,6 +14,8 @@ const questions = [
   {
     question: "How do you say Customer Centricity in Italian?",
     video: "/pictures/centricity.mp4",
+    sentence:
+      "Our dedication to customer centricity is characterised by putting our clients at the centre of all we do. It's a connection based on comprehension, responsiveness, and going above and beyond expectations rather than just a service.",
     answers: [
       { text: "Vásárlóközpontú", correct: false },
       { text: "Centricidade no Cliente", correct: false },
@@ -22,15 +26,19 @@ const questions = [
   {
     question: "How do you say Responsibility in Maori?",
     video: "/pictures/responsability.mp4",
+    sentence:
+      "Our actions are founded on responsibility. To ensure a morally and sustainably sound future, we hold ourselves accountable for the choices we make and the effects they have on the society at large as well as inside our own organisation.",
     answers: [
-      { text: "လိုင်းစင်", correct: false },
-      { text: "Responsabilité", correct: true },
-      { text: "Whakawhanake", correct: true },
+      { text: "လိုင်းစင်", correct: true },
+      { text: "Responsabilité", correct: false },
+      { text: "Whakawhanake", correct: false },
     ],
   },
   {
     question: "How do you say Passion in Burmese?",
     video: "/pictures/passion.mp4",
+    sentence:
+      "Our enthusiasm is what propels us on this path. It's the inner fire that propels us to succeed, develop, and create. The core of our energetic and dynamic workplace is passion.",
     answers: [
       { text: "Paixão", correct: false },
       { text: "ကြောင့်", correct: true },
@@ -40,6 +48,8 @@ const questions = [
   {
     question: "How do say Entrepreneurship in Portuguese?",
     video: "/pictures/entrepreneurship.mp4",
+    sentence:
+      "Embracing entrepreneurship necessitates the promotion of a creative and risk-taking culture. It's about searching for new opportunities where others see roadblocks and never giving up on changing for the better.",
     answers: [
       { text: "Vállalkozás", correct: false },
       { text: "Empreendedorismo", correct: true },
@@ -49,6 +59,8 @@ const questions = [
   {
     question: "How do you say One CFF in Hungarian?",
     video: "/pictures/onecff.mp4",
+    sentence:
+      "United under the banner of One CFF, we are committed to all these values as One.",
     answers: [
       { text: "Egy CFF", correct: true },
       { text: "Un CFF", correct: false },
@@ -151,9 +163,17 @@ function selectAnswer(e) {
     videoElement.style.display = "block";
     videoElement.width = 600;
     videoElement.height = 400;
-    // videoElement.volume = 0.2; // just in case i want to add volume to the videos
+    videoElement.volume = 0; // just in case i want to add volume to the videos
     questionElement.innerHTML = " ";
     questionElement.appendChild(videoElement);
+
+    // display sentence + the video
+    const sentenceElement = document.createElement("p");
+    sentenceElement.innerText = currentQuestion.sentence;
+
+    questionElement.innerHTML = ""; // Clear the question content
+    questionElement.appendChild(videoElement);
+    questionElement.appendChild(sentenceElement);
 
     // auto-play the video
     videoElement.autoplay = true;
