@@ -241,9 +241,10 @@ function showScore() {
     // resultContainer.style.marginTop = "20px"; // prob not needed for now
 
     const finalVideoElement = document.createElement("video");
-    finalVideoElement.src = "/pictures/onecff.mp4"; //
+    finalVideoElement.src = "/pictures/winning.mp4"; //
     finalVideoElement.controls = false;
     finalVideoElement.autoplay = true;
+    finalVideoElement.loop = true;
     finalVideoElement.style.margin = "auto";
     finalVideoElement.style.display = "block";
     finalVideoElement.width = 600;
