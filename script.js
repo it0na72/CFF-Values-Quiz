@@ -227,6 +227,8 @@ function showScore() {
     const congratulatoryMessageElement = document.createElement("p");
     congratulatoryMessageElement.innerText = `Congratulations! You scored ${score} out of ${questions.length} and  completed the quiz!`;
 
+    startConfetti();
+
     // container for the congratulatory message, final video, and buttons
     const resultContainer = document.createElement("div");
     resultContainer.style.textAlign = "center";
