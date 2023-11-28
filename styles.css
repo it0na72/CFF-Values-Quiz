@@ -140,34 +140,4 @@ footer a {
 }
 
 /*Mobile Devices */
-@media only screen and (max-width: 600px) {
-  .app {
-    height: 90%; /* Set height to 100% of viewport height */
-  }
-
-  .app h1 {
-    font-size: 20px;
-    text-align: center; /* Center the heading text */
-  }
-
-  .quiz {
-    width: 100%; /* Stretch the quiz to fit the screen */
-    height: 130%; /* Set height to 100% of viewport height */
-    padding: 15px; /* Add padding for better readability on small screens */
-    box-sizing: border-box; /* Ensure padding is included in width calculation */
-  }
-
-  .quiz h2 {
-    font-size: 16px;
-    text-align: center; /* Center the quiz heading text */
-  }
-
-  .btn {
-    font-size: 14px;
-  }
-
-  #next-btn {
-    width: 100%;
-    margin: 20px 0 0;
-  }
-}
+// do later
