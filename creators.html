@@ -11,10 +11,12 @@
         margin: 0;
         padding: 0;
       }
+
       html {
         height: 100%;
         cursor: default;
       }
+
       body {
         font-family: "Roboto", sans-serif;
         width: 100%;
@@ -27,6 +29,7 @@
         opacity: 1;
         animation: fadein 3s forwards;
       }
+
       h2 {
         font-weight: 300;
         margin-bottom: 25px;
@@ -45,28 +48,35 @@
         text-decoration: none;
       }
 
+      /* Apply hover effect only to the specified name */
       a:hover {
         box-shadow: inset 100px 0 0 0 rgb(87, 0, 87);
-        color: white;
+        color: rgb(255, 255, 255);
+      }
+
+      h1,
+      h3 {
+        box-shadow: inset 0 0 0 0 rgb(87, 0, 87);
+        color: rgb(87, 0, 87);
+        margin: 0 -0.25rem;
+        padding: 0 0.25rem;
+        transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        text-decoration: none;
+      }
+
+      h3:hover b {
+        box-shadow: inset 900px 0 100px 0 rgb(87, 0, 87);
+        color: rgb(255, 255, 255);
+        transition: color 0.3s ease-in-out, box-shadow 0.7s ease-in-out;
       }
 
       img {
-        max-width: 20%; /* Set max-width to prevent images from exceeding their container */
-        display: block; /* Remove extra space below inline images */
-        margin: auto; /* Center the image within its container */
+        max-width: 30%; /* Set max-width to prevent images from exceeding their container */
+        display: inline-block; /* Remove extra space below inline images */
       }
+
       #main {
-        /* vertical-align: middle;
-        display: table-cell; */
         text-align: center;
-      }
-
-      #final-img-container {
-        margin-bottom: 20px; /* Adjust margin as needed */
-      }
-
-      #unnamed-img-container {
-        max-width: 10%; /* Adjust the size of the container for the smaller image */
       }
 
       /* Fades in animation */
@@ -75,18 +85,13 @@
           opacity: 0;
         }
       }
-      /* Animates bar on page load */
-      @keyframes proanimate {
-        from {
-          width: 0%;
-        }
-      }
 
       @media (max-width: 799px) {
         img {
           width: 60%;
         }
       }
+
       @media screen and (max-width: 477px) {
         img {
           width: 60%;
@@ -117,7 +122,12 @@
         ><img src="pictures/final.jpg" alt="cff logo"
       /></a>
       <a href=""><img src="pictures/unnamed.jpg" alt="developers" /></a>
-      <h3>André O, Elisa C, Adrienn T, Khin D, Stuart W, Jean R, Sam F</h3>
+
+      <h3>
+        <br /><b
+          >André O, Elisa C, Adrienn T, Khin D, Stuart W, Jean R, Sam F</b
+        >
+      </h3>
 
       <h2>
         You can go back <a href="index.html"><b>HERE</b>.</a>

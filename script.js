@@ -92,6 +92,10 @@ nextButton.addEventListener("click", handleNextButton);
 function handleNextButton() {
   currentQuestionIndex++;
   if (currentQuestionIndex < questions.length) {
+    // Check if it's the last question to change button to "submit instead"
+    if (currentQuestionIndex === questions.length - 1) {
+      nextButton.innerHTML = "Submit";
+    }
     showQuestion();
   } else {
     showScore();
@@ -238,10 +242,9 @@ function showScore() {
     // container for the congratulatory message, final video, and buttons
     const resultContainer = document.createElement("div");
     resultContainer.style.textAlign = "center";
-    // resultContainer.style.marginTop = "20px"; // prob not needed for now
 
     const finalVideoElement = document.createElement("video");
-    finalVideoElement.src = "/pictures/winning.mp4"; //
+    finalVideoElement.src = "/pictures/winning.mp4";
     finalVideoElement.controls = false;
     finalVideoElement.autoplay = true;
     finalVideoElement.loop = true;
@@ -256,20 +259,24 @@ function showScore() {
     retryButton.innerHTML = "Play Again";
     retryButton.id = "next-btn";
     retryButton.addEventListener("click", startQuiz);
-    resultContainer.appendChild(retryButton);
 
-    // creators link
-    const linkElement = document.createElement("a");
-    linkElement.href = "creators.html";
-    linkElement.innerHTML = "Check out the creators of this website!";
-    linkElement.id = "next-btn";
-    resultContainer.appendChild(linkElement);
+    // Creators link
+    const creatorsLink = document.createElement("a");
+    creatorsLink.href = "creators.html";
+    creatorsLink.innerHTML = "Check out the creators of this website!";
+    creatorsLink.id = "next-btn";
+
+    resultContainer.appendChild(congratulatoryMessageElement);
+    resultContainer.appendChild(finalVideoElement);
+    resultContainer.appendChild(retryButton);
+    resultContainer.appendChild(document.createElement("br")); // Line break
+    resultContainer.appendChild(document.createElement("br")); // Line break
+    resultContainer.appendChild(creatorsLink);
 
     questionElement.innerHTML = ""; // Clear the question content
-    questionElement.appendChild(congratulatoryMessageElement);
-    questionElement.appendChild(finalVideoElement);
+    questionElement.appendChild(resultContainer);
 
-    // show the retry button after 32 seconds. video is 31 seconds so slightly after
+    // show the retry button after 32 seconds. video is 31 seconds, so slightly after
     setTimeout(() => {
       showRetryButton();
     }, 1);
@@ -304,9 +311,9 @@ function showScore() {
 
   function showLinkToNextPage() {
     const linkElement = document.createElement("a");
-    linkElement.href = "creators.html"; // Set the path to your next HTML page
+    linkElement.href = "creators.html";
     linkElement.innerHTML = "Check out the creators of this website!";
-    linkElement.classList.add("next-btn"); // Add a class for styling the link purple
+    linkElement.classList.add("next-btn");
     questionElement.appendChild(linkElement);
   }
   startConfetti();
