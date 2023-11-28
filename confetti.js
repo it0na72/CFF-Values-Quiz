@@ -56,6 +56,8 @@ var removeConfetti; //call to stop the confetti animation and remove all confett
       );
     })();
     var canvas = document.getElementById("confetti-canvas");
+    canvas.width = width;
+    canvas.height = height;
     if (canvas === null) {
       canvas = document.createElement("canvas");
       canvas.setAttribute("id", "confetti-canvas");
@@ -94,6 +96,9 @@ var removeConfetti; //call to stop the confetti animation and remove all confett
 
   function stopConfettiInner() {
     streamingConfetti = false;
+    var canvas = document.getElementById("confetti-canvas");
+    var context = canvas.getContext("2d");
+    context.clearRect(0, 0, canvas.width, canvas.height);
   }
 
   function removeConfettiInner() {
