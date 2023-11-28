@@ -1,23 +1,28 @@
 "use strict";
-
+const topImages = [
+  "excellence.jpg",
+  "centricity.jpg",
+  "responsability.jpg",
+  "passion.jpg",
+  "entre.jpg",
+  "onecff.jpg",
+];
 const questions = [
   {
     question: "How do you say Excellence in French?",
     video: "pictures/excellence.mp4",
-    sentence:
-      "Nothing less than excellence is our goal in the pursuit of perfection. This value pushes us to pursue the extraordinary in all of our endeavours and to go above and beyond the ordinary.",
+    sentence: `“An unwavering commitment to attain the highest standards”`,
     answers: [
-      { text: "Excellence", correct: false },
+      { text: "Excellence", correct: true },
       { text: "Hiranga", correct: false },
-      { text: "Excelencia", correct: true },
+      { text: "Excelencia", correct: false },
     ],
   },
 
   {
     question: "How do you say Customer Centricity in Italian?",
     video: "pictures/centricity.mp4",
-    sentence:
-      "Our dedication to customer centricity is characterised by putting our clients at the centre of all we do. It's a connection based on comprehension, responsiveness, and going above and beyond expectations rather than just a service.",
+    sentence: "“The CUSTOMER at the heart of every decision we make”",
     answers: [
       { text: "Vásárlóközpontú", correct: false },
       { text: "Centricidade no Cliente", correct: false },
@@ -28,30 +33,27 @@ const questions = [
   {
     question: "How do you say Responsibility in Maori?",
     video: "pictures/responsability.mp4",
-    sentence:
-      "Our actions are founded on responsibility. To ensure a morally and sustainably sound future, we hold ourselves accountable for the choices we make and the effects they have on the society at large as well as inside our own organisation.",
+    sentence: "“Striving to make a difference for a better future”",
     answers: [
-      { text: "လိုင်းစင်", correct: true },
+      { text: "လိုင်းစင်", correct: false },
       { text: "Responsabilité", correct: false },
-      { text: "Whakawhanake", correct: false },
+      { text: "Whakawhanake", correct: true },
     ],
   },
   {
     question: "How do you say Passion in Burmese?",
     video: "pictures/passion.mp4",
-    sentence:
-      "Our enthusiasm is what propels us on this path. It's the inner fire that propels us to succeed, develop, and create. The core of our energetic and dynamic workplace is passion.",
+    sentence: "“A culture dedicated to food led by experts in their field”",
     answers: [
       { text: "Paixão", correct: false },
-      { text: "ကြောင့်", correct: true },
+      { text: "ကြောင့် - pronounced as 'kyaung' ", correct: true },
       { text: "Pasión", correct: false },
     ],
   },
   {
     question: "How do say Entrepreneurship in Portuguese?",
     video: "pictures/entrepreneurship.mp4",
-    sentence:
-      "Embracing entrepreneurship necessitates the promotion of a creative and risk-taking culture. It's about searching for new opportunities where others see roadblocks and never giving up on changing for the better.",
+    sentence: "“Guided by curiosity and thriving for continuous innovation”",
     answers: [
       { text: "Vállalkozás", correct: false },
       { text: "Empreendedorismo", correct: true },
@@ -61,8 +63,7 @@ const questions = [
   {
     question: "How do you say One CFF in Hungarian?",
     video: "pictures/onecff.mp4",
-    sentence:
-      "United under the banner of One CFF, we are committed to all these values as One.",
+    sentence: "“The feeling of a united work family”",
     answers: [
       { text: "Egy CFF", correct: true },
       { text: "Un CFF", correct: false },
@@ -77,7 +78,7 @@ const nextButton = document.getElementById("next-btn");
 const showQuizButton = document.getElementById("showQuiz");
 const quizDescription = document.getElementById("quiz-description");
 const audio = document.getElementById("bgm");
-audio.volume = 0.4;
+// audio.volume = 0; // bgm audio
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -107,15 +108,22 @@ function startQuiz() {
   score = 0;
   showQuizButton.style.display = "none";
   nextButton.innerHTML = "Next Question";
+
   showQuestion();
+
   // hide the paragraph when the quiz is started
   quizDescription.style.display = "none";
 }
 
 function showQuestion() {
   resetState();
+
   let currentQuestion = questions[currentQuestionIndex];
   let questionNo = currentQuestionIndex + 1;
+
+  const topImage = document.getElementById("top-image");
+  topImage.src = topImages[currentQuestionIndex];
+
   questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
 
   currentQuestion.answers.forEach((answer) => {
@@ -227,27 +235,25 @@ function showScore() {
     const congratulatoryMessageElement = document.createElement("p");
     congratulatoryMessageElement.innerText = `Congratulations! You scored ${score} out of ${questions.length} and  completed the quiz!`;
 
-    startConfetti();
-
     // container for the congratulatory message, final video, and buttons
     const resultContainer = document.createElement("div");
     resultContainer.style.textAlign = "center";
     // resultContainer.style.marginTop = "20px"; // prob not needed for now
 
     const finalVideoElement = document.createElement("video");
-    finalVideoElement.src = "/pictures/oneforall.mp4"; //
+    finalVideoElement.src = "/pictures/onecff.mp4"; //
     finalVideoElement.controls = false;
     finalVideoElement.autoplay = true;
     finalVideoElement.style.margin = "auto";
     finalVideoElement.style.display = "block";
     finalVideoElement.width = 600;
     finalVideoElement.height = 400;
-    finalVideoElement.volume = 0.3;
+    finalVideoElement.volume = 0.4;
 
     // "Play Again" button
     const retryButton = document.createElement("button");
     retryButton.innerHTML = "Play Again";
-    retryButton.id = "nextLink";
+    retryButton.id = "next-btn";
     retryButton.addEventListener("click", startQuiz);
     resultContainer.appendChild(retryButton);
 
@@ -255,7 +261,7 @@ function showScore() {
     const linkElement = document.createElement("a");
     linkElement.href = "creators.html";
     linkElement.innerHTML = "Check out the creators of this website!";
-    linkElement.id = "nextLink";
+    linkElement.id = "next-btn";
     resultContainer.appendChild(linkElement);
 
     questionElement.innerHTML = ""; // Clear the question content
@@ -273,10 +279,9 @@ function showScore() {
     }, 1);
   } else {
     // Player didn't get all questions right
-    const retryMessageElement = document.createElement("p");
-    retryMessageElement.innerText = `You scored ${score} out of ${questions.length} 😔 Retry to get all questions right! There might be a prize if you get all questions correct 🤔`; // not really needed since there's no way to fail this quiz but gonna leave it for now
-
-    questionElement.appendChild(retryMessageElement);
+    // const retryMessageElement = document.createElement("p");
+    // retryMessageElement.innerText = `You scored ${score} out of ${questions.length} 😔 Retry to get all questions right! There might be a prize if you get all questions correct 🤔`; // not really needed since there's no way to fail this quiz but gonna leave it for now
+    // questionElement.appendChild(retryMessageElement);
   }
 
   function showRetryButton() {
@@ -303,4 +308,5 @@ function showScore() {
     linkElement.classList.add("next-btn"); // Add a class for styling the link purple
     questionElement.appendChild(linkElement);
   }
+  startConfetti();
 }

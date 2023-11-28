@@ -16,11 +16,14 @@
         cursor: default;
       }
       body {
-        font-family: "Roboto", sans-serif; /* Default font */
+        font-family: "Roboto", sans-serif;
         width: 100%;
         height: 100%;
         text-align: center;
-        display: table;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         opacity: 1;
         animation: fadein 3s forwards;
       }
@@ -48,37 +51,22 @@
       }
 
       img {
-        width: 25%; /* Image width */
-        border: 0; /* For IE */
-        /* Aspect ratio of image, gives initial dimension to prevent text moving down once image is loaded */
-        /* When changing logo, change this also */
+        max-width: 20%; /* Set max-width to prevent images from exceeding their container */
+        display: block; /* Remove extra space below inline images */
+        margin: auto; /* Center the image within its container */
       }
       #main {
-        vertical-align: middle;
-        display: table-cell;
+        /* vertical-align: middle;
+        display: table-cell; */
+        text-align: center;
       }
-      /* Progress bar */
-      #progress {
-        width: 45%; /* Bar width */
-        margin: 0 auto;
-        border-radius: 10px; /* Roundness */
-        background-color: #ffffff; /* Background colour */
-        padding: 7px 5px;
-        /* border: 5px solid #a8a8a8; Border */
+
+      #final-img-container {
+        margin-bottom: 20px; /* Adjust margin as needed */
       }
-      #fill {
-        padding: 2px 0;
-        background-color: rgb(87, 0, 87); /* Fill colour */
-        width: 35%; /* Bar percentage, change text below also */
-        border-radius: 25px; /* Roundness */
-        animation: proanimate 2s;
-      }
-      #barpercent h3 {
-        color: white; /* Bar percentage text colour */
-        margin: 0;
-        padding: 0;
-        opacity: 1;
-        animation: fadein 3s forwards;
+
+      #unnamed-img-container {
+        max-width: 10%; /* Adjust the size of the container for the smaller image */
       }
 
       /* Fades in animation */
@@ -121,20 +109,15 @@
   </head>
   <body>
     <div id="main">
-      <a href="https://github.com/it0na72"
-        ><img src="classic-fine-foods-logo-1595507375.png" alt="cff logo"
-      /></a>
       <h1>Classic Fine Foods Values Quiz Developers</h1>
       <h2>
         If you found this, welcome! Here's all the developers of this website.
       </h2>
-      <h3>
-        André Oliveira - Customer Service Officer <br />Elisa Corda - Customer
-        Service Manager <br />Adrienn Tőzsér - Customer Service Supervisor
-        <br />Khin Dyson - Finance Controller <br />Stuart Wimsett - HR &
-        Training Officer <br />Jean Rossignol - Senior Buyer <br />Sam Fielder -
-        IT Support Specialist
-      </h3>
+      <a href="https://github.com/it0na72"
+        ><img src="pictures/final.jpg" alt="cff logo"
+      /></a>
+      <a href=""><img src="pictures/unnamed.jpg" alt="developers" /></a>
+      <h3>André O, Elisa C, Adrienn T, Khin D, Stuart W, Jean R, Sam F</h3>
 
       <h2>
         You can go back <a href="index.html"><b>HERE</b>.</a>

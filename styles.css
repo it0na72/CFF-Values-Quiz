@@ -32,7 +32,7 @@ footer a {
 
 .app {
   background: #ffffff;
-  width: 50%;
+  width: 45%;
   margin: 100px auto 0;
   border-radius: 10px;
   padding: 30px;
@@ -133,11 +133,11 @@ footer a {
 }
 
 .correct {
-  background: green;
+  background: rgb(1, 238, 1);
 }
 .incorrect {
-  background: palevioletred;
+  background: rgb(228, 106, 146);
 }
 
 /*Mobile Devices */
-// do later
+/* do later */
