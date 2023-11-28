@@ -3,7 +3,7 @@
 const questions = [
   {
     question: "How do you say Excellence in French?",
-    video: "pictures/excellence.mp4",
+    video: "excellence.mp4",
     sentence:
       "Nothing less than excellence is our goal in the pursuit of perfection. This value pushes us to pursue the extraordinary in all of our endeavours and to go above and beyond the ordinary.",
     answers: [
