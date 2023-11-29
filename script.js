@@ -263,14 +263,13 @@ function showScore() {
     // Creators link
     const creatorsLink = document.createElement("a");
     creatorsLink.href = "creators.html";
-    creatorsLink.innerHTML = "Check out the creators of this website!";
-    creatorsLink.id = "next-btn";
+    creatorsLink.innerHTML =
+      "Click here to check out the creators of this website!";
+    creatorsLink.id = "creators-link";
 
     resultContainer.appendChild(congratulatoryMessageElement);
     resultContainer.appendChild(finalVideoElement);
-    resultContainer.appendChild(retryButton);
-    resultContainer.appendChild(document.createElement("br")); // Line break
-    resultContainer.appendChild(document.createElement("br")); // Line break
+    // resultContainer.appendChild(retryButton);
     resultContainer.appendChild(creatorsLink);
 
     questionElement.innerHTML = ""; // Clear the question content
@@ -297,7 +296,7 @@ function showScore() {
     retryButton.innerHTML = "Play Again";
     retryButton.classList.add("next-btn");
     retryButton.addEventListener("click", startQuiz);
-    questionElement.appendChild(retryButton);
+    // questionElement.appendChild(retryButton);
   }
 
   function handleNextButton() {
@@ -310,10 +309,16 @@ function showScore() {
   }
 
   function showLinkToNextPage() {
-    const linkElement = document.createElement("a");
-    linkElement.href = "creators.html";
-    linkElement.innerHTML = "Check out the creators of this website!";
-    linkElement.classList.add("next-btn");
+    // const linkElement = document.createElement("a");
+    // linkElement.href = "creators.html";
+    // linkElement.innerHTML = "Check out the creators of this website!";
+    // linkElement.classList.add("next-btn");
+
+    // Create a container div for centering
+    const linkContainer = document.createElement("div");
+    linkContainer.style.textAlign = "center";
+    linkContainer.appendChild(linkElement);
+
     questionElement.appendChild(linkElement);
   }
   startConfetti();

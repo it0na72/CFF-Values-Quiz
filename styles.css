@@ -5,6 +5,15 @@
   box-sizing: border-box;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 body {
   background: rgb(87, 0, 87);
 }
@@ -92,7 +101,7 @@ footer a {
   color: black;
   font-weight: 500;
   width: 100%;
-  border: 1px solid #222;
+  border: 1px solid #000000;
   padding: 10px;
   margin: 10px 0;
   text-align: left;
@@ -107,6 +116,11 @@ footer a {
 }
 .btn:disabled {
   cursor: no-drop;
+}
+
+.next-btn {
+  display: block; /* Change from inline-table to block */
+  margin: 20px auto;
 }
 
 #next-btn,
@@ -149,5 +163,38 @@ footer a {
   background: rgb(228, 106, 146);
 }
 
+#creators-link {
+  text-decoration: none;
+  color: rgb(87, 0, 87);
+}
+
 /*Mobile Devices */
-/* do later */
+/* Fades in animation */
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 799px) {
+  div {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 477px) {
+  div {
+    width: 60%;
+  }
+  h1 {
+    font-size: 1.3em;
+  }
+  h2 {
+    margin: 1.1em;
+    font-size: 1.1em;
+  }
+
+  h3 {
+    margin: 1em;
+  }
+}
