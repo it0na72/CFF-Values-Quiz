@@ -244,7 +244,7 @@ function showScore() {
     resultContainer.style.textAlign = "center";
 
     const finalVideoElement = document.createElement("video");
-    finalVideoElement.src = "/pictures/winning.mp4";
+    finalVideoElement.src = "pictures/winning.mp4";
     finalVideoElement.controls = false;
     finalVideoElement.autoplay = true;
     finalVideoElement.loop = true;
