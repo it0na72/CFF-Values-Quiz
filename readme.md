@@ -1,7 +1,7 @@
 <!-- ABOUT THE PROJECT -->
 <div align="center">
   <a href="https://github.com/it0na72/CFF-Values-Quiz/">
-    <img src="/classic-fine-foods-logo-1595507375.webp" alt="Logo" width="150" height="100">
+    <img src="/classic-fine-foods-logo-1595507375.png" alt="Logo" width="150" height="100">
   </a>
 <h3 align="center">CFF Values Quiz</h3>
 
@@ -38,14 +38,14 @@ After cloning this repo you should be able to change as needed.
 - [ ] Fix media queries for mobile + tablet
 - [x] Add condition that should only show the prize (video) if player gets 5/5 answers
 - [x] Add background music as soon as the quiz starts at 10% volume
-- [ ] Include transitions and loading effect before the next question (maybe not needed)
-- [ ] Add loading page transition with the CFF logo spinning (TBC)
+- [-] Include transitions and loading effect before the next question (maybe not needed)
+- [-] Add loading page transition with the CFF logo spinning (TBC)
 - [x] Add different questions
 - [x] Add opening page before starting the quiz explaining what the project is about
 - [x] After the quiz, add completed video with all values
 - [x] Add Stuart's video between each correct question
 - [x] Added external page with all developers
-- [ ] Change developers on the last page to show after 5 seconds
+- [x] Change developers on the last page to show after 5 seconds
 - [ ] Fix centering on first button + last "Play Again" & "Check the devs" lines
 - [x] Add confetti effects after quiz is completed
 - [x] Fix confetti
