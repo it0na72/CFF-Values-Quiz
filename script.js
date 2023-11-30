@@ -113,6 +113,10 @@ function startQuiz() {
   showQuizButton.style.display = "none";
   nextButton.innerHTML = "Next Question";
 
+  // toggle the display of the logo container
+  const logoContainer = document.getElementById("logo-container");
+  logoContainer.style.display = "none"; // dont display logo during the quiz for
+
   showQuestion();
 
   // hide the paragraph when the quiz is started

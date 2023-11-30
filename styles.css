@@ -48,6 +48,16 @@ footer a {
   pointer-events: none;
   z-index: 999999;
 }
+#logo-container {
+  display: block;
+  text-align: right;
+}
+
+#logo-container img {
+  width: 150px;
+  margin-top: 19px;
+  margin-bottom: -19px;
+}
 
 .app {
   background: #ffffff;
@@ -166,6 +176,12 @@ footer a {
 #creators-link {
   text-decoration: none;
   color: rgb(87, 0, 87);
+}
+
+/* Add margin-top to the top-image container */
+#top-image-container {
+  margin-bottom: 10px;
+  margin-top: -10px; /* Adjust the margin value as needed */
 }
 
 /*Mobile Devices */
