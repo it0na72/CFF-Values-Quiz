@@ -23,9 +23,9 @@
         height: 100%;
         text-align: center;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        justify-content: center;
+
         opacity: 1;
         animation: fadein 3s forwards;
       }
@@ -65,7 +65,7 @@
       }
 
       h3 {
-        text-align: flex; /* Align text to the right */
+        text-align: flex;
       }
 
       h3:hover b {
@@ -75,8 +75,18 @@
       }
 
       img {
-        max-width: 30%;
+        width: 30%;
         display: inline-block;
+        max-width: 100%;
+      }
+
+      /* Set the width for the images individually */
+      img[src="pictures/final.jpg"] {
+        width: 29.9%;
+      }
+
+      img[src="pictures/unnamed.jpg"] {
+        width: 28.2%;
       }
 
       #main {
