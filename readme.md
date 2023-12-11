@@ -46,7 +46,7 @@ After cloning this repo you should be able to change as needed.
 - [x] Add Stuart's video between each correct question
 - [x] Added external page with all developers
 - [x] Change developers on the last page to show after 5 seconds
-- [ ] Fix centering on first button + last "Play Again" & "Check the devs" lines
+- [x] Fix centering on first button + last "Play Again" & "Check the devs" lines
 - [x] Add confetti effects after quiz is completed
 - [x] Fix confetti
 
