@@ -197,6 +197,7 @@ function selectAnswer(e) {
     videoElement.width = 600;
     videoElement.height = 400;
     videoElement.volume = 0; // just in case i want to add volume to the videos
+    videoElement.setAttribute("playsinline", ""); // add playsinline attribute for iphone to not autoplay in fullscreen immediately
     questionElement.innerHTML = " ";
     questionElement.appendChild(videoElement);
 
