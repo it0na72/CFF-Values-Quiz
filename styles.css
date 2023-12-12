@@ -197,26 +197,24 @@ footer a {
 /*Mobile Devices */
 @media only screen and (max-width: 600px) {
   .app {
-    height: 50%;
+    width: 80%;
+    overflow-x: hidden;
     text-align: center;
     align-items: center;
   }
 
   #top-image-container img {
-    width: 60%;
+    width: 80%;
+    align-content: center;
   }
 
   #question {
-    font-size: 0.5em;
+    font-size: 1em;
+    width: max-content;
+    overflow-x: auto;
   }
 
   #top-image-container {
     max-width: 50%;
-    align-items: center;
-  }
-
-  #top-image {
-    width: 20%;
-    overflow-x: hidden;
   }
 }
